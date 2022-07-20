@@ -27,6 +27,16 @@
 .App-link {
   color: #61dafb;
 }
+header.panel-heading a {
+  color: #fff;
+  padding-left: 20px;
+  
+}
+a {
+
+  text-decoration: none;
+}
+
 
 @keyframes App-logo-spin {
   from {

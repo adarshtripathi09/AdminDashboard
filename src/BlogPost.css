@@ -1,0 +1,26 @@
+
+.bacon-blog-post.bacon-shadow a {
+    color: red;
+    background-color: #fff;
+    padding: 0px;
+}
+.bacon-blog-post-inner { 
+    
+    padding: 30px 0px; 
+}
+img.wp-post-image {
+    width: 50%;
+}
+.popup_btn {
+    margin-top: 16px!important;
+}
+.col-md-12.update_button {
+    position: absolute!important;
+}
+.btn_update {
+    background-color: tomato!important;
+    color: #fff!important;
+}
+
+
+
