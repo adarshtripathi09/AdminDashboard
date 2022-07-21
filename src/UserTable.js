@@ -17,7 +17,6 @@ const UserTable = ({ data, removeItem, setData }) => {
     const [persondata, setPersonData] = useState({});
 
 
-
     const handleClickOpen = (e) => {
 
         const dataId = e.target.dataset.userid;
