@@ -25,10 +25,10 @@ const UserTable = ({ data, removeItem, setData }) => {
         //     setPersonData(response.data);
         // })
         const filterData = data.filter((ele) => {
-            return ele.id === dataId;
+            return ele.id == dataId;
         })
         setPersonData(filterData[0]);
-        // console.log(persondata)
+        console.log(filterData)
         setOpen(true);
     };
     const handleClose = () => {
@@ -43,7 +43,7 @@ const UserTable = ({ data, removeItem, setData }) => {
             "email" : persondata.email
         };
 
-        console.log(userData); console.log(persondata.id);
+        // console.log(userData); console.log(persondata.id);
         axios.post(`users/${persondata.id}`, userData).then((response) => {
             setPersonData(response.data);
             setOpen(false);
