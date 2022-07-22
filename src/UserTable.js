@@ -25,10 +25,12 @@ const UserTable = ({ data, removeItem, setData }) => {
         //     setPersonData(response.data);
         // })
         const filterData = data.filter((ele) => {
+          
             return ele.id == dataId;
         })
+        
         setPersonData(filterData[0]);
-        console.log(filterData)
+
         setOpen(true);
     };
     const handleClose = () => {
@@ -106,9 +108,9 @@ const UserTable = ({ data, removeItem, setData }) => {
                                 margin="dense"
                                 name="first_name"
                                 label="First Name"
-                                type="text"
+                                type="text"npm start
                                 onChange={(e) => {
-                                    setPersonData((prev) => ({ ...prev, [e.target.name] : e.target.value }))
+                                    setPersonData((prev)=>({ ...prev, [e.target.name] : e.target.value }))
                                 }}
                                 value={persondata.first_name}
                                 fullWidth
