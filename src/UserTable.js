@@ -21,7 +21,6 @@ const UserTable = ({ data, removeItem, setData }) => {
 
         const dataId = e.target.dataset.userid;
 
-
         // axios.get(`users/${dataId}`).then((response) => {
         //     setPersonData(response.data);
         // })
@@ -35,7 +34,6 @@ const UserTable = ({ data, removeItem, setData }) => {
     const handleClose = () => {
         setOpen(false);
     };
-
     const editData = (e) => {
         e.preventDefault()
         // debugger;
