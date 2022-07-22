@@ -51,8 +51,6 @@ const UserTable = ({ data, removeItem, setData }) => {
         })
     }
 
-    
-    
     return (
         <>
             {
