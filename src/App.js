@@ -1,4 +1,5 @@
 import './App.css';
+import React from "react"
 import Dashboard from '../src/Dashboard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from '../src/Header';
@@ -11,11 +12,26 @@ import UpdatePost from '../src/UpdatePost';
 import Editpopup from '../src/Editpopup';
 import userData from '../src/UserTable';
 
-
+const themes = {
+  light: {
+    foreground: "#000000",
+    background: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    background: "#222222"
+  }
+};
+export const ThemeContext = React.createContext({theme: themes.light, set: () => null });
 function App() {
+  const [currentTheme, setTheme] = React.useState(themes.dark)
+  const changeTheme = (type) => {
+    setTheme(themes[type])
+  }
   return (
   <>
   <BrowserRouter>
+  <ThemeContext.Provider value={{theme: currentTheme, setTheme: changeTheme}}>
       <Routes>
       <Route path="/" element={<Dashboard/>}></Route>
       <Route path="/:id" element={<userData/>}> </Route>
@@ -27,6 +43,7 @@ function App() {
       <Route path="/editpopup" element={<Editpopup/>}></Route>
        
       </Routes>
+      </ThemeContext.Provider>
     </BrowserRouter>
   
   

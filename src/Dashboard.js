@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, createContext, useContext, useReducer } from 'react';
 // import '../src/Dashboard.scss';
 import Header from '../src/Header';
 import axios from './Axios/Axios';
@@ -13,9 +13,10 @@ import TextField from '@mui/material/TextField';
 import LinearProgress from '@mui/material/LinearProgress';
 
 
-
+import {ThemeContext} from "./App";
 export const Dashboard = () => {
- 
+    // const theme = useContext(ThemeContext);
+    const {theme, setTheme} = useContext(ThemeContext);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
@@ -69,9 +70,8 @@ export const Dashboard = () => {
 
 
     return (
-
-        <>
-            {loading ?
+        
+            <>{loading ?
 
                 <section className="panel">
                     <Header />
@@ -79,7 +79,7 @@ export const Dashboard = () => {
                         <div className="adv-table editable-table ">
                             <div className="clearfix">
                                 <div className="btn-group">
-                                    <button id="editable-sample_new" className="btn green">
+                                    <button id="editable-sample_new" className="btn green" style={{ background: theme.background, color: theme.foreground }} onClick={() => setTheme('light')}>
                                         <Link to='/add'>Add Item</Link>
                                         <i className="fa fa-plus"></i>
                                     </button>
@@ -151,10 +151,9 @@ export const Dashboard = () => {
                     <LinearProgress color="success" />
                 </Box>
 
-            }
-
-            {/* // https://codepen.io/NicolasMota/pen/yLKBXWG */}
-        </>
+            }</>
+        
+       
     )
 }
 
